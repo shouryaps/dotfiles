@@ -15,6 +15,8 @@ brew install --cask wez/wezterm/wezterm
 
 # install prompt
 brew install starship
+touch ~/.zshrc
+grep -qxF 'eval "$(starship init zsh)"' ~/.zshrc || echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 # install languages
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
