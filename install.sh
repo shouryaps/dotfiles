@@ -13,9 +13,11 @@ brew install --cask font-jetbrains-mono-nerd-font
 brew tap wez/wezterm
 brew install --cask wez/wezterm/wezterm
 
-# install prompt
+# install and setup prompt
 brew install starship
+# create if not already present
 touch ~/.zshrc
+# add line at end of file, if line doesn't exist
 grep -qxF 'eval "$(starship init zsh)"' ~/.zshrc || echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 # install languages
