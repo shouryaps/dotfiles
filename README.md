@@ -1,6 +1,7 @@
 # dotfiles
 
 These are config files to set up a system the way I like.
+
 This repo assumes you are running macOS. To set up, follow below steps:
 1. Install [homebrew](https://brew.sh/)
 2. Run following commands:
