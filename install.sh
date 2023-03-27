@@ -49,6 +49,8 @@ brew install --cask firefox
 brew install --cask the-unarchiver
 brew install --cask vlc
 brew install --cask spotify
+brew install --cask raspberry-pi-imager
+brew install --cask discord
 
 # clipboard manager
 brew install --cask maccy
