@@ -26,6 +26,10 @@ brew install go
 brew install elixir
 brew install node
 
+# setup go path
+grep -qxF 'export GOPATH=$HOME/go' ~/.zshrc || echo 'export GOPATH=$HOME/go' >> ~/.zshrc
+grep -qxF 'export PATH=$GOPATH/bin:$PATH' ~/.zshrc || echo 'export PATH=$GOPATH/bin:$PATH' >> ~/.zshrc
+
 # install hugo for blogging
 brew install hugo
 
