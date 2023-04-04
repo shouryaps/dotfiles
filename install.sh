@@ -50,6 +50,7 @@ colima stop
 
 # install utility apps
 brew install --cask firefox
+brew install --cask google-chrome
 brew install --cask the-unarchiver
 brew install --cask vlc
 brew install --cask spotify
