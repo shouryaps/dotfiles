@@ -45,6 +45,11 @@ colima start
 mkdir -p ~/.docker/cli-plugins/
 curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-darwin-aarch64 -o ~/.docker/cli-plugins/docker-compose
 chmod +x ~/.docker/cli-plugins/docker-compose
+# install docker buildx
+brew install docker-buildx
+ln -sfn $(which docker-buildx) ~/.docker/cli-plugins/docker-buildx
+# use buildx as default in build
+docker buildx install
 # stop colima, so that we can start in future when using
 colima stop
 
