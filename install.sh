@@ -24,7 +24,7 @@ grep -qxF 'eval "$(starship init zsh)"' ~/.zshrc || echo 'eval "$(starship init 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 brew install go
 brew install elixir
-brew install node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
 # setup go path
 grep -qxF 'export GOPATH=$HOME/go' ~/.zshrc || echo 'export GOPATH=$HOME/go' >> ~/.zshrc
@@ -58,7 +58,6 @@ brew install --cask firefox
 brew install --cask google-chrome
 brew install --cask the-unarchiver
 brew install --cask vlc
-brew install --cask spotify
 brew install --cask raspberry-pi-imager
 brew install --cask discord
 
