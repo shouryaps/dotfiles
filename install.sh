@@ -6,11 +6,9 @@ brew upgrade
 brew install git
 
 # install nerd font
-brew tap homebrew/cask-fonts
-brew install --cask font-jetbrains-mono-nerd-font
+brew install font-jetbrains-mono-nerd-font
 
 # install terminal emulator/multiplexer
-brew tap wez/wezterm
 brew install --cask wez/wezterm/wezterm
 
 # install and setup prompt
@@ -24,7 +22,11 @@ grep -qxF 'eval "$(starship init zsh)"' ~/.zshrc || echo 'eval "$(starship init 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 brew install go
 brew install elixir
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+brew install n
+mkdir $HOME/.n
+grep -qxF 'export N_PREFIX=$HOME/.n' ~/.zshrc || echo 'export N_PREFIX=$HOME/.n' >> ~/.zshrc
+source ~/.zshrc
+n latest
 
 # setup go path
 grep -qxF 'export GOPATH=$HOME/go' ~/.zshrc || echo 'export GOPATH=$HOME/go' >> ~/.zshrc
@@ -35,23 +37,6 @@ brew install hugo
 
 # install nvim
 brew install nvim
-
-# install container runtimes and cli
-brew install colima
-brew install docker
-# start colima first time to load the image
-colima start
-# install docker compose v2+
-mkdir -p ~/.docker/cli-plugins/
-curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-darwin-aarch64 -o ~/.docker/cli-plugins/docker-compose
-chmod +x ~/.docker/cli-plugins/docker-compose
-# install docker buildx
-brew install docker-buildx
-ln -sfn $(which docker-buildx) ~/.docker/cli-plugins/docker-buildx
-# use buildx as default in build
-docker buildx install
-# stop colima, so that we can start in future when using
-colima stop
 
 # install utility apps
 brew install --cask firefox
